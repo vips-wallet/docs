@@ -168,11 +168,13 @@ insight APIドキュメント
 # Group erc20
 ## ？？？ [GET /erc20/search]
 ## ？？？ [GET /erc20/balances]
+
 ## ？？？ [GET /erc20/{contractAddress}]
 ## ？？？ [GET /erc20/{contractAddress}/transfers]
 ## ？？？ [GET /erc20/{contractAddress}/balances]
 
 # Group tokens
+
 ## ？？？ [GET /tokens]
 ## ？？？ [GET /tokens/{contractBaseAddress}/addresses/{accountAddress}/balance]
 ## ？？？ [GET /tokens/{contractBaseAddress}/transactions]
@@ -205,5 +207,13 @@ insight APIドキュメント
 ## ？？？ [GET /status]
 ## ？？？ [GET /sync]
 ## ？？？ [GET /peer]
-## ？？？ [GET /version]
+
+## バージョン取得 [GET /version]
+
++ Response 200 (application/json)
+  + Body
+    {
+      "version":"0.0.23"
+    }
+
 ## ？？？ [GET /dgpinfo]
