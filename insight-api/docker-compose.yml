@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  aglio:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ".:/projects"
+    tty: true
