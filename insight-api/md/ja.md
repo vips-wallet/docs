@@ -154,29 +154,29 @@ insight APIドキュメント
   + `height`: (number, required)
 
 # Group transaction
-## ？？？ [GET /tx/:txid]
+## ？？？ [GET /tx/{txid}]
 ## ？？？ [GET /txs]
-## ？？？ [GET /txs/:txid/receipt]
+## ？？？ [GET /txs/{txid}/receipt]
 ## ？？？ [POST /tx/send]
-## ？？？ [GET /rawtx/:txid]
+## ？？？ [GET /rawtx/{txid}]
 
 # Group contracts
-## ？？？ [GET /contracts/:contractaddress/hash/:contracthash/call]
-## ？？？ [GET /contracts/:contractaddress/info]
-## ？？？ [GET /contracts/:contractaddress/get-erc20-info]
+## ？？？ [GET /contracts/{contractaddress}/hash/{contracthash}/call]
+## ？？？ [GET /contracts/{contractaddress}/info]
+## ？？？ [GET /contracts/{contractaddress}/get-erc20-info]
 
 # Group erc20
 ## ？？？ [GET /erc20/search]
 ## ？？？ [GET /erc20/balances]
-## ？？？ [GET /erc20/:contractAddress]
-## ？？？ [GET /erc20/:contractAddress/transfers]
-## ？？？ [GET /erc20/:contractAddress/balances]
+## ？？？ [GET /erc20/{contractAddress}]
+## ？？？ [GET /erc20/{contractAddress}/transfers]
+## ？？？ [GET /erc20/{contractAddress}/balances]
 
 # Group tokens
 ## ？？？ [GET /tokens]
-## ？？？ [GET /tokens/:contractBaseAddress/addresses/:accountAddress/balance]
-## ？？？ [GET /tokens/:contractBaseAddress/transactions]
-## ？？？ [GET /tokens/:contractBaseAddress/total-supply]
+## ？？？ [GET /tokens/{contractBaseAddress}/addresses/{accountAddress}/balance]
+## ？？？ [GET /tokens/{contractBaseAddress}/transactions]
+## ？？？ [GET /tokens/{contractBaseAddress}/total-supply]
 
 # Group messages
 ## ？？？ [GET /messages/verify]
