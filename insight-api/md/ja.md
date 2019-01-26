@@ -154,67 +154,8 @@ insight APIドキュメント
   + `height`: (number, required)
 
 # Group transaction
-
-トランザクション情報の取得・送信を行う。
-
-## 指定トランザクション情報取得 [GET /tx/{txid}]
-
-+ Parameters
-  + `txid`: c3bb9785e6994e8f965a664a475dc09cf525406eed0e6f64bad65269f66cf5b8 (string, required) - TXID
-
-+ Response 200 (application/json)
-  + Body
-    {
-      "txid":"c3bb9785e6994e8f965a664a475dc09cf525406eed0e6f64bad65269f66cf5b8",
-      "version":2,
-      "locktime":0,
-      "isqrc20Transfer":false,
-      "vin":[
-        {
-          "coinbase":"510101",
-          "sequence":4294967295,
-          "n":0
-        }
-      ],
-      "vout":[
-        {
-          "value":"10000000000.00000000",
-          "n":0,
-          "scriptPubKey":{
-            "hex":"21028d616e785c4cd7b20866a1cbbf84b4cb172b9609a295ce52e3b37e0396cd6e1aac",
-            "asm":"028d616e785c4cd7b20866a1cbbf84b4cb172b9609a295ce52e3b37e0396cd6e1a OP_CHECKSIG",
-            "addresses":[
-              "VD5tffByCTgKtQssUxuSuykcsTV6PFULfE"
-            ],
-            "type":"pubkeyhash"
-          },
-          "spentTxId":"bd8cc8c2af3648293b02dbcd359cfd556dc175db13721a60cd6feab8a950559a",
-          "spentIndex":0,
-          "spentHeight":506
-        },
-        {
-          "value":"0.00000000",
-          "n":1,
-          "scriptPubKey":{
-            "hex":"6a24aa21a9ede2f61c3f71d1defd3fa999dfa36953755c690689799962b48bebd836974e8cf9",
-            "asm":"OP_RETURN aa21a9ede2f61c3f71d1defd3fa999dfa36953755c690689799962b48bebd836974e8cf9"
-          },
-          "spentTxId":null,
-          "spentIndex":null,
-          "spentHeight":null
-        }
-      ],
-      "blockhash":"0000e0e7e28aef099b64e3fc81d8b9e7992e2adc56e2e573f8c025ce634db4e4",
-      "blockheight":1,
-      "confirmations":417217,
-      "time":1522319429,
-      "blocktime":1522319429,
-      "isCoinBase":true,
-      "valueOut":10000000000,
-      "size":145
-    }
-
-  ## ？？？ [GET /txs]
+## ？？？ [GET /tx/{txid}]
+## ？？？ [GET /txs]
 ## ？？？ [GET /txs/{txid}/receipt]
 ## ？？？ [POST /tx/send]
 ## ？？？ [GET /rawtx/{txid}]
@@ -268,6 +209,8 @@ insight APIドキュメント
 ## ？？？ [GET /peer]
 
 ## バージョン取得 [GET /version]
+
+insightのバージョンを取得する。
 
 + Response 200 (application/json)
   + Body
