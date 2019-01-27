@@ -302,12 +302,85 @@ VRC20トークンのシンボル情報および小数点以下桁数を取得す
     }
 
 # Group erc20
+
 ## ？？？ [GET /erc20/search]
 ## ？？？ [GET /erc20/balances]
 
-## ？？？ [GET /erc20/{contractAddress}]
-## ？？？ [GET /erc20/{contractAddress}/transfers]
-## ？？？ [GET /erc20/{contractAddress}/balances]
+## トークン情報取得 [GET /erc20/{contractAddress}]
+
+VRC20トークンの基本情報を取得する。
+
++ Parameters
+  + `contractAddress`: 813cd81362ce245df1c50aac7e7769c852d60968 (string, required) - コントラクトアドレス
+
++ Response 200 (application/json)
+  + Body
+    {
+      "contract_address": "813cd81362ce245df1c50aac7e7769c852d60968",
+      "total_supply": "10000000000000000000000",
+      "decimals": "18",
+      "name": "サンプル",
+      "symbol": "SAMPLE",
+      "version": "",
+      "transfers_count": 1,
+      "holders_count": 2
+    }
+
+## 送付履歴取得 [GET /erc20/{contractAddress}/transfers]
+
+VRC20トークンの送付履歴を取得する
+
++ Parameters
+  + `contractAddress`: 813cd81362ce245df1c50aac7e7769c852d60968 (string, required) - コントラクトアドレス
+
++ Response 200 (application/json)
+  + Body
+    {
+      "limit": 100,
+      "offset": 0,
+      "count": 1,
+      "items": [
+            {
+                  "contract_address": "813cd81362ce245df1c50aac7e7769c852d60968",
+                  "tx_hash": "39d3bf55b8cd08c53fefd72f637afc147286d95d15217b280f57469271c4444d",
+                  "tx_time": 1548514603,
+                  "from": "VTCfvohXJVC3ikp2fX5n1arTsFSpCfmtnf",
+                  "from_eth": "0xb5749d2f105a91593b956a121fcf94e59278d562",
+                  "to": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
+                  "to_eth": "0x0c97b859de459789c2df463ff28160d1508f555e",
+                  "value": "5000000000000000000000"
+            }
+      ]
+}
+
+## 保有状況取得 [GET /erc20/{contractAddress}/balances]
+
+VRC20トークンの保有状況を取得する。
+
++ Parameters
+  + `contractAddress`: 813cd81362ce245df1c50aac7e7769c852d60968 (string, required) - コントラクトアドレス
+
++ Response 200 (application/json)
+  + Body
+    {
+      "limit": 100,
+      "offset": 0,
+      "count": 2,
+      "items": [
+            {
+                  "contract_address": "813cd81362ce245df1c50aac7e7769c852d60968",
+                  "address": "VTCfvohXJVC3ikp2fX5n1arTsFSpCfmtnf",
+                  "address_eth": "0xb5749d2f105a91593b956a121fcf94e59278d562",
+                  "amount": "5000000000000000000000"
+            },
+            {
+                  "contract_address": "813cd81362ce245df1c50aac7e7769c852d60968",
+                  "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
+                  "address_eth": "0x0c97b859de459789c2df463ff28160d1508f555e",
+                  "amount": "5000000000000000000000"
+            }
+      ]
+    }
 
 # Group tokens
 
