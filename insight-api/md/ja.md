@@ -340,7 +340,7 @@ VRC20トークン情報をクエリ文字列で部分一致検索して取得す
 VRC20トークンの保有状況をVIPSTARCOINアドレスおよびコントラクトアドレスを指定して取得する。
 
 + Parameters
-  + `balanceAddress`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, optional) - VIPSTARCOINアドレス
+  + `balanceAddress`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, optional) - VIPSTARCOINアドレス(カンマ区切りリスト)
   + `contractAddress`: 813cd81362ce245df1c50aac7e7769c852d60968 (string, optional) - コントラクトアドレス
 
 + Response 200 (application/json)
