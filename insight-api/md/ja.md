@@ -127,8 +127,6 @@ insight APIドキュメント
 + Parameters
   + `addrs`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス(カンマ区切りリスト)
 
-## ？？？ [POST /addrs]
-
 # Group blocks
 
 ## 一覧取得 [GET /blocks]
