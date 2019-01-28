@@ -301,8 +301,77 @@ VRC20トークンのシンボル情報および小数点以下桁数を取得す
 
 # Group erc20
 
-## ？？？ [GET /erc20/search]
-## ？？？ [GET /erc20/balances]
+## 部分一致検索 [GET /erc20/search{?query}]
+
+VRC20トークン情報をクエリ文字列で部分一致検索して取得する。
+
++ Parameters
+  + `query`: sample (string, required) - クエリ文字列
+
++ Response 200 (application/json)
+  + Body
+    {
+      "count": 1,
+      "items": [
+            {
+                  "_id": "5c4c71e5cb90174a434eab55",
+                  "tx_hash": "1e5ce58f5498cf6746b68856e5d8898a0a2afa057c17c5da7e1316be2fad38c5",
+                  "vout_idx": 1,
+                  "__v": 0,
+                  "block_height": 417449,
+                  "contract_address": "813cd81362ce245df1c50aac7e7769c852d60968",
+                  "contract_address_base": "VNSZysD5evHML3Brt833UoQUmn5Hr5tRPq",
+                  "created_at": "2019-01-26T14:42:45.062Z",
+                  "decimals": "18",
+                  "exception": false,
+                  "name": "サンプル",
+                  "symbol": "SAMPLE",
+                  "total_supply": "10000000000000000000000",
+                  "updated_at": "2019-01-26T14:42:45.062Z",
+                  "version": ""
+            }
+      ]
+    }
++ Response 422 (text/plain)
+    Bad query
+
+## アドレス指定検索 [GET /erc20/balances{?balanceAddress}]
+
+VRC20トークンの保有状況をVIPSTARCOINアドレスおよびコントラクトアドレスを指定して取得する。
+
++ Parameters
+  + `balanceAddress`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, optional) - VIPSTARCOINアドレス
+  + `contractAddress`: 813cd81362ce245df1c50aac7e7769c852d60968 (string, optional) - コントラクトアドレス
+
++ Response 200 (application/json)
+  + Body
+    [
+      {
+            "amount": "5000000000000000000000",
+            "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
+            "address_eth": "0x0c97b859de459789c2df463ff28160d1508f555e",
+            "contract": {
+                  "_id": "5c4c71e5cb90174a434eab55",
+                  "tx_hash": "1e5ce58f5498cf6746b68856e5d8898a0a2afa057c17c5da7e1316be2fad38c5",
+                  "vout_idx": 1,
+                  "__v": 0,
+                  "block_height": 417449,
+                  "contract_address": "813cd81362ce245df1c50aac7e7769c852d60968",
+                  "contract_address_base": "VNSZysD5evHML3Brt833UoQUmn5Hr5tRPq",
+                  "created_at": "2019-01-26T14:42:45.062Z",
+                  "decimals": "18",
+                  "exception": false,
+                  "name": "サンプル",
+                  "symbol": "SAMPLE",
+                  "total_supply": "10000000000000000000000",
+                  "updated_at": "2019-01-26T14:42:45.062Z",
+                  "version": ""
+            }
+      }
+    ]
+
++ Response 404 (text/plain)
+    Not Found
 
 ## トークン情報取得 [GET /erc20/{contractAddress}]
 
