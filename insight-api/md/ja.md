@@ -218,8 +218,6 @@ insight APIドキュメント
 
 # Group contracts
 
-スマートコントラクトの呼出を行う。
-
 ## コントラクトコール [GET /contracts/{contractaddress}/hash/{contracthash}/call]
 
 コントラクトのコールメソッドを呼び出す。
@@ -227,6 +225,7 @@ insight APIドキュメント
 + Parameters
   + `contractaddress`: 813cd81362ce245df1c50aac7e7769c852d60968 (string, required) - コントラクトアドレス
   + `contracthash`: 70a082310000000000000000000000000c97b859de459789c2df463ff28160d1508f555e (string, required) - コントラクトハッシュ
+  + `from`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス
 
 + Response 200 (application/json)
   + Body
