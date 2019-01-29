@@ -402,8 +402,8 @@ VRC20トークンの転送履歴を取得する
 
 + Parameters
   + `contractAddress`: 813cd81362ce245df1c50aac7e7769c852d60968 (string, required) - コントラクトアドレス
-  + `offset`: (number, optional)
-  + `limit`: (number, optional)
+  + `offset`: 0 (number, optional) - オフセット
+  + `limit`: 100 (number, optional) - 取得上限
   + `addresses`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, optional) - VIPSTARCOINアドレス
 
 + Response 200 (application/json)
@@ -435,8 +435,8 @@ VRC20トークンの残高一覧を取得する。
 
 + Parameters
   + `contractAddress`: 813cd81362ce245df1c50aac7e7769c852d60968 (string, required) - コントラクトアドレス
-  + `offset`: (number, optional)
-  + `limit`: (number, optional)
+  + `offset`: 0 (number, optional) - オフセット
+  + `limit`: 100 (number, optional) - 取得上限
   + `addresses`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, optional) - VIPSTARCOINアドレス
 
 + Response 200 (application/json)
@@ -533,12 +533,12 @@ VRC20トークンの残高一覧を取得する。
 
 + Parameters
   + `contractBaseAddress`: VNSZysD5evHML3Brt833UoQUmn5Hr5tRPq (string, required) - コントラクトベースアドレス
-  + `offset`: (number, optional)
-  + `limit`: (number, optional)
-  + `from_block`: (number, optional)
-  + `to_block`: (number, optional)
-  + `from_date_time`: (date, optional)
-  + `to_date_time`: (date, optional)
+  + `offset`: 0 (number, optional) - オフセット
+  + `limit`: 100 (number, optional) - 取得上限
+  + `from_block`: 1 (number, optional) - 開始ブロック
+  + `to_block`: 500000 (number, optional) - 終了ブロック
+  + `from_date_time`: 2019-01-01T00:00:00.000Z (date, optional) - 開始日時
+  + `to_date_time`: 2019-12-31T00:00:00.000Z (date, optional) - 終了日時
   + `addresses`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, optional) - VIPSTARCOINアドレス(カンマ区切りリスト)
 
 + Response 200 (application/json)
