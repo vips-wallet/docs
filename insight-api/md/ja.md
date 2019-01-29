@@ -396,9 +396,9 @@ VRC20トークンの基本情報を取得する。
 + Response 404 (text/plain)
     Not Found
 
-## 送付履歴取得 [GET /erc20/{contractAddress}/transfers]
+## 転送履歴取得 [GET /erc20/{contractAddress}/transfers]
 
-VRC20トークンの送付履歴を取得する
+VRC20トークンの転送履歴を取得する
 
 + Parameters
   + `contractAddress`: 813cd81362ce245df1c50aac7e7769c852d60968 (string, required) - コントラクトアドレス
@@ -429,9 +429,9 @@ VRC20トークンの送付履歴を取得する
 + Response 404 (text/plain)
     Not Found
 
-## 保有状況取得 [GET /erc20/{contractAddress}/balances]
+## トークン残高一覧取得 [GET /erc20/{contractAddress}/balances]
 
-VRC20トークンの保有状況を取得する。
+VRC20トークンの残高一覧を取得する。
 
 + Parameters
   + `contractAddress`: 813cd81362ce245df1c50aac7e7769c852d60968 (string, required) - コントラクトアドレス
