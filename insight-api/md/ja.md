@@ -466,10 +466,124 @@ VRC20トークンの保有状況を取得する。
 
 # Group tokens
 
-## ？？？ [GET /tokens]
-## ？？？ [GET /tokens/{contractBaseAddress}/addresses/{accountAddress}/balance]
-## ？？？ [GET /tokens/{contractBaseAddress}/transactions]
-## ？？？ [GET /tokens/{contractBaseAddress}/total-supply]
+## トークン一覧取得 [GET /tokens]
+
+全トークン一覧を取得します。
+
++ Response 200 (application/json)
+  + Body
+    {
+      "count": 431,
+      "items": [
+            {
+                  "count_holders": 81,
+                  "tx_hash": "cf5b8269877ab1e9e8e196c499f2de2fb6b7c42a2801c27d779a48e55a8d284c",
+                  "vout_idx": 1,
+                  "updated_at": "2018-11-25T07:51:49.476Z",
+                  "block_height": 4112,
+                  "contract_address": "374f4ccf8577536906ff3fa66927aaa3d5a0e66b",
+                  "contract_address_base": "VFhg61tNqsYNqHjx3x18jYPJ4MjJARCXPh",
+                  "decimals": "2",
+                  "name": "VIPSTARCOIN発行記念2018/4/7",
+                  "symbol": "ヌクモリティ",
+                  "total_supply": "10000",
+                  "version": "",
+                  "exception": false,
+                  "created_at": "2018-11-25T07:51:49.476Z",
+                  "description": null
+            },
+            ...
+            {
+                  "count_holders": 2,
+                  "tx_hash": "1e5ce58f5498cf6746b68856e5d8898a0a2afa057c17c5da7e1316be2fad38c5",
+                  "vout_idx": 1,
+                  "updated_at": "2019-01-26T14:42:45.062Z",
+                  "block_height": 417449,
+                  "contract_address": "813cd81362ce245df1c50aac7e7769c852d60968",
+                  "contract_address_base": "VNSZysD5evHML3Brt833UoQUmn5Hr5tRPq",
+                  "decimals": "18",
+                  "name": "サンプル",
+                  "symbol": "SAMPLE",
+                  "total_supply": "10000000000000000000000",
+                  "version": "",
+                  "exception": false,
+                  "created_at": "2019-01-26T14:42:45.062Z",
+                  "description": null
+            }
+      ]
+    }
+
+## トークン残高取得 [GET /tokens/{contractBaseAddress}/addresses/{accountAddress}/balance]
+
+指定アドレスの指定コントラクトベースアドレスのトークン残高を取得する。
+
++ Parameters
+  + `contractBaseAddress`: VNSZysD5evHML3Brt833UoQUmn5Hr5tRPq (string, required) - コントラクトベースアドレス
+  + `accountAddress`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス
+
++ Response 200 (text/plain)
+    5000000000000000000000
+
++ Response 404 (text/plain)
+    Not Found
+
+## トランザクション履歴取得 [GET /tokens/{contractBaseAddress}/transactions]
+
+コントラクトベースアドレスを指定してトークンのトランザクション履歴を取得します。
+
++ Parameters
+  + `contractBaseAddress`: VNSZysD5evHML3Brt833UoQUmn5Hr5tRPq (string, required) - コントラクトベースアドレス
+  + `offset`: (number, optional)
+  + `limit`: (number, optional)
+  + `from_block`: (number, optional)
+  + `to_block`: (number, optional)
+  + `from_date_time`: 2018-01-29T00:00:00 (date, optional)
+  + `to_date_time`: 2019-01-29T00:00:00 (date, optional)
+  + `addresses`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, optional) - VIPSTARCOINアドレス(カンマ区切りリスト)
+
++ Response 200 (application/json)
+  + Body
+    {
+      "limit": 100,
+      "offset": 0,
+      "addresses": [],
+      "from_block": null,
+      "to_block": null,
+      "from_date_time": null,
+      "to_date_time": null,
+      "count": 1,
+      "items": [
+            {
+                  "contract_address_base": "VNSZysD5evHML3Brt833UoQUmn5Hr5tRPq",
+                  "block_height": 417459,
+                  "tx_hash": "39d3bf55b8cd08c53fefd72f637afc147286d95d15217b280f57469271c4444d",
+                  "from": "VTCfvohXJVC3ikp2fX5n1arTsFSpCfmtnf",
+                  "to": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
+                  "value": "5000000000000000000000",
+                  "block_date_time": "2019-01-26T14:56:43.000Z"
+            }
+      ]
+    }
+
+## トークン総発行数取得 [GET /tokens/{contractBaseAddress}/total-supply]
+
+指定コントラクトベースアドレスのトークンの総発行数を取得する。
+
++ Parameters
+  + `contractBaseAddress`: VNSZysD5evHML3Brt833UoQUmn5Hr5tRPq (string, required) - コントラクトベースアドレス
+  + `format`: object (string, optional) - JSON形式で取得する場合指定
+
++ Response 200 (text/plain)
+    10000000000000000000000
+
++ Response 200 (application/json)
+  + Body
+    {
+      "total_supply": "10000000000000000000000"
+    }
+
++ Response 404 (text/plain)
+    Not Found
 
 # Group messages
 ## ？？？ [GET /messages/verify]
