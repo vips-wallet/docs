@@ -605,13 +605,110 @@ VRC20トークンの残高一覧を取得する。
 ## ？？？ [GET /statistics/richest-addresses-list]
 
 # Group utils
-## ？？？ [GET /utils/estimatefee]
-## ？？？ [GET /utils/minestimatefee]
-## ？？？ [GET /markets/info]
-## ？？？ [GET /currency]
-## ？？？ [GET /status]
-## ？？？ [GET /sync]
-## ？？？ [GET /peer]
+## TODO [GET /utils/estimatefee]
+
+TODO
+
++ Parameters
+  + `nbBlocks`: TODO (string, optional) - TODO（カンマ区切りリスト）
+
++ Response 200 (application/json)
+  + Body
+    {
+      "2":-1
+    }
+
+## TODO [GET /utils/minestimatefee]
+
+TODO
+
++ Parameters
+  + `nbBlocks`: TODO (string, optional) - TODO（カンマ区切りリスト）
+
++ Response 200 (application/json)
+  + Body
+    {
+      "fee_per_kb":0.00001
+    }
+
+## TODO [GET /markets/info]
+
+TODO
+
++ Response 200 (application/json)
+  + Body
+    {
+      "price_usd": "0.0000603270",
+      "price_btc": "0.00000002",
+      "market_cap_usd": "2070760.0",
+      "available_supply": "34325587621.0"
+    }
+
+## TODO [GET /currency]
+
+TODO
+https://www.bitstamp.net/api/ticker/
+
+## TODO [GET /status]
+
+TODO option list
+
++ Parameters
+  + `q`: TODO (string, optional) - TODO
+
++ Response 200 (application/json)
+  + Body
+    {
+      "info": {
+            "version": 1000200,
+            "protocolversion": 70003,
+            "walletversion": 130000,
+            "balance": 0,
+            "blocks": 423096,
+            "timeoffset": 0,
+            "connections": 8,
+            "proxy": "",
+            "difficulty": {
+                  "proof-of-work": 527.3764050697074,
+                  "proof-of-stake": 5014263757.141127
+            },
+            "testnet": false,
+            "keypoololdest": 1543123084,
+            "keypoolsize": 100,
+            "paytxfee": 0,
+            "relayfee": 0.004,
+            "errors": "",
+            "network": "livenet",
+            "reward": 950000000000
+      }
+    }
+
+## TODO [GET /sync]
+
+TODO
+
++ Response 200 (application/json)
+  + Body
+    {
+      "status": "finished",
+      "blockChainHeight": 423099,
+      "syncPercentage": 100,
+      "height": 423099,
+      "error": null,
+      "type": "vipstarcoincore node"
+    }
+
+## TODO [GET /peer]
+
+TODO
+
++ Response 200 (application/json)
+  + Body
+    {
+      "connected": true,
+      "host": "127.0.0.1",
+      "port": null
+    }
 
 ## バージョン取得 [GET /version]
 
@@ -623,4 +720,14 @@ insightのバージョンを取得する。
       "version":"0.0.23"
     }
 
-## ？？？ [GET /dgpinfo]
+## TODO [GET /dgpinfo]
+
+TODO
+
++ Response 200 (application/json)
+  + Body
+    {
+      "maxblocksize": 2000000,
+      "mingasprice": 40,
+      "blockgaslimit": 40000000
+    }
