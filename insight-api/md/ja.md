@@ -605,6 +605,7 @@ VRC20トークンの残高一覧を取得する。
 ## ？？？ [GET /statistics/richest-addresses-list]
 
 # Group utils
+
 ## TODO [GET /utils/estimatefee]
 
 TODO
@@ -648,6 +649,8 @@ TODO
 
 TODO
 https://www.bitstamp.net/api/ticker/
+
+# Group status
 
 ## TODO [GET /status]
 
