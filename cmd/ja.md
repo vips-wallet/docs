@@ -442,7 +442,7 @@ mempool内のすべてのトランザクションの情報を返す
 
 ---
 ### gettxoutproof ["txid",...] "blockhash"
-txidがブロックに含まれていることを（16進数エンコードで）証明したものを返す
+txidがブロックに含まれていることを（16進数エンコードで）証明したものを返す  
 たまに動作しないときがある（詳細不明、`help gettxoutproof`のNOTE参照）  
 txindexするかblockhashを指定することで常に動作する
 #### 引数
