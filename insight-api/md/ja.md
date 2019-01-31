@@ -660,12 +660,12 @@ bitstamp(https://www.bitstamp.net/api/ticker/)よりビットコイン価格を�
 
 # Group status
 
-## TODO [GET /status]
+## ステータス取得 [GET /status]
 
-TODO option list
+VIPSTARCOINブロックチェーンのステータスを取得する。（表示オプション：getDifficulty|getLastBlockHash|getBestBlockHash|getMiningInfo|getStakingInfo|getInfo）
 
 + Parameters
-  + `q`: TODO (string, optional) - TODO
+  + `q`: getInfo (string, optional) - 表示オプション
 
 + Response 200 (application/json)
   + Body
@@ -694,9 +694,9 @@ TODO option list
       }
     }
 
-## TODO [GET /sync]
+## 同期状況取得 [GET /sync]
 
-TODO
+VIPSTARCOINブロックチェーンとの同期状況を取得する。
 
 + Response 200 (application/json)
   + Body
@@ -709,9 +709,9 @@ TODO
       "type": "vipstarcoincore node"
     }
 
-## TODO [GET /peer]
+## ピア取得 [GET /peer]
 
-TODO
+VIPSTARCOIN insight-apiのピアを取得する。（ローカルホスト固定）
 
 + Response 200 (application/json)
   + Body
@@ -723,7 +723,7 @@ TODO
 
 ## バージョン取得 [GET /version]
 
-insightのバージョンを取得する。
+VIPSTARCOIN insight-apiのバージョンを取得する。
 
 + Response 200 (application/json)
   + Body
@@ -731,9 +731,9 @@ insightのバージョンを取得する。
       "version":"0.0.23"
     }
 
-## TODO [GET /dgpinfo]
+## DgpInfo取得 [GET /dgpinfo]
 
-TODO
+最大ブロックサイズ、最低ガス価格、ブロックガスリミットを取得する。
 
 + Response 200 (application/json)
   + Body
