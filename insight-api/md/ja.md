@@ -606,12 +606,12 @@ VRC20トークンの残高一覧を取得する。
 
 # Group utils
 
-## TODO [GET /utils/estimatefee]
+## トランザクション手数料計算 [GET /utils/estimatefee]
 
-TODO
+指定ブロック内に含めるためのトランザクション手数料を計算する。
 
 + Parameters
-  + `nbBlocks`: TODO (string, optional) - TODO（カンマ区切りリスト）
+  + `nbBlocks`: 2 (number, optional) - 指定ブロック（カンマ区切りリスト）
 
 + Response 200 (application/json)
   + Body
@@ -619,12 +619,12 @@ TODO
       "2":-1
     }
 
-## TODO [GET /utils/minestimatefee]
+## 最小トランザクション手数料計算 [GET /utils/minestimatefee]
 
-TODO
+最小トランザクション手数料を計算する。
 
 + Parameters
-  + `nbBlocks`: TODO (string, optional) - TODO（カンマ区切りリスト）
+  + `nbBlocks`: 6 (number, optional) - 指定ブロック
 
 + Response 200 (application/json)
   + Body
@@ -632,9 +632,9 @@ TODO
       "fee_per_kb":0.00001
     }
 
-## TODO [GET /markets/info]
+## 市場情報取得 [GET /markets/info]
 
-TODO
+CMC(https://api.coinmarketcap.com/v1/ticker/vipstar-coin/)よりVIPSTARCOINの市場情報を取得する。
 
 + Response 200 (application/json)
   + Body
@@ -645,10 +645,18 @@ TODO
       "available_supply": "34325587621.0"
     }
 
-## TODO [GET /currency]
+## ビットコイン価格取得 [GET /currency]
 
-TODO
-https://www.bitstamp.net/api/ticker/
+bitstamp(https://www.bitstamp.net/api/ticker/)よりビットコイン価格を取得する。
+
++ Response 200 (application/json)
+  + Body
+    {
+      "status": 200,
+      "data": {
+            "bitstamp": 3417.2
+      }
+    }
 
 # Group status
 
