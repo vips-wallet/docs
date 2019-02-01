@@ -590,7 +590,16 @@ VRC20トークンの残高一覧を取得する。
 ## ？？？ [POST /messages/verify]
 
 # Group statistics
-## ？？？ [GET /supply]
+## 総供給枚数取得 [GET /supply]
+
+VIPSTARCOINの総供給枚数(totalsupply)を取得する。
+
++ Response 200 (application/json)
+  + Body
+    {
+      "supply":61950116894
+    }
+
 ## ？？？ [GET /statistics/total-supply]
 ## ？？？ [GET /statistics/circulating-supply]
 ## ？？？ [GET /statistics/supply]
