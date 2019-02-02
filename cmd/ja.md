@@ -556,3 +556,75 @@ UTXOに関する情報を返す
 ]
 ```
 ---
+### sendcheckpoint "blockhash"
+Send a synchronized checkpoint.（詳細不明）
+#### 引数
+`"blockhash"`（多分必須） ブロックハッシュ
+#### 結果の詳細
+（不明）
+
+---
+### verifychain "checklevel" "nblocks"
+ブロックチェーンのデータベースを検証する  
+#### 引数
+`"checklevel"`（任意） どの程度検証するか  
+```
+0…Read from disk to ensure the files are accessible
+1…Ensure each block is valid
+2…Make sure undo files can be read from disk and are in a valid format
+3…Test each block undo to ensure it results in correct state
+4…After undoing blocks, reconnect them to ensure they reconnect correctly
+```
+`"nblocks"`（任意） 初期値：6 チェックするブロック数（0なら全ブロック検証）
+#### 結果の詳細
+```
+（true/false 有効かどうか）
+```
+---
+### verifytxoutproof "proof"
+`gettxoutproof`の結果を検証する？（詳細不明）
+#### 引数
+`"proof"`（必須） `gettxoutproof`の結果
+#### 結果の詳細
+```
+[
+  （txid）
+]
+```
+---
+### waitforlogs "fromBlock" "toBlock" "filter" "minconf"
+新しいログを待ち、条件に一致するログを取得（トークンの取引のみ？）  
+logeventsを有効にする必要あり
+#### 引数
+`"fromblock"`（任意） ログの検索を始めるブロック高？  
+`"toblock"`（任意）ログの検索を中止するブロック高？  
+`"filter"`（任意） 条件を付ける `{ addresses?: Hex160String[], topics?: Hex256String[] }` （helpの記述例、動くかは不明）  
+`"minconf"`（任意） 初期値：6 最小検証数
+#### 結果の詳細
+```
+{
+  "entries": [
+    {
+      "blockHash": （ブロックハッシュ）,
+      "blockNumber": （ブロック高）,
+      "transactionHash": （txid）,
+      "transactionIndex": （詳細不明、数字）,
+      "from": （送り主の16進数化アドレス）,
+      "to": "（コントラクトアドレス？0の場合もあり）",
+      "cumulativeGasUsed": （累積のガスの量？）,
+      "gasUsed": （使われたガスの量）,
+      "contractAddress": （コントラクトアドレス）,
+      "excepted": （詳細不明、テスト時は"None"）,
+      "topics": [
+        （16進数の文字列）,
+        （16進数の文字列）,
+        （16進数の文字列）
+      ],
+      "data": （16進数の文字列）
+    },
+    （同じブロックに複数取引があった場合続く）
+  ],
+  "count": （取引数）,
+  "nextblock": （次のブロック高）
+}
+```
