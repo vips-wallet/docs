@@ -592,7 +592,7 @@ VRC20トークンの残高一覧を取得する。
 # Group statistics
 ## 総供給枚数取得 [GET /supply]
 
-VIPSTARCOINの総供給枚数(totalsupply)を取得する。
+VIPSTARCOINの総供給枚数(TotalSupply)を取得する。
 
 + Response 200 (application/json)
   + Body
@@ -600,18 +600,403 @@ VIPSTARCOINの総供給枚数(totalsupply)を取得する。
       "supply":61950116894
     }
 
-## ？？？ [GET /statistics/total-supply]
-## ？？？ [GET /statistics/circulating-supply]
-## ？？？ [GET /statistics/supply]
-## ？？？ [GET /statistics/fees]
-## ？？？ [GET /statistics/transactions]
-## ？？？ [GET /statistics/outputs]
-## ？？？ [GET /statistics/difficulty]
-## ？？？ [GET /statistics/stake]
-## ？？？ [GET /statistics/total]
-## ？？？ [GET /statistics/balance-intervals]
-## ？？？ [GET /statistics/richer-than]
-## ？？？ [GET /statistics/richest-addresses-list]
+## 総供給枚数取得 [GET /statistics/total-supply]
+
+VIPSTARCOINの総供給枚数(TotalSupply)を取得する。（/supplyと同じ処理）
+
++ Response 200 (application/json)
+  + Body
+    {
+      "supply":61950116894
+    }
+
+## 供給枚数取得 [GET /statistics/circulating-supply]
+
+VIPSTARCOINの供給枚数(CirculatingsSupply)を取得する。（現状では正常動作しない）
+
++ Parameters
+  + `format`: object (string, optional) - JSON形式で取得する場合指定
+
++ Response 200 (text/plain)
+  + Body
+    89688404
+
++ Response 200 (application/json)
+  + Body
+    {
+      "circulatingSupply":"89688408"
+    }
+
+## 供給枚数分析 [GET /statistics/supply]
+
+VIPSTARCOINの供給枚数を日別にカウントして取得する。（現状では正常動作しない）
+
++ Parameters
+  + `days`: 14 (number, optional) - 取得対象期間
+
++ Response 200 (application/json)
+  + Body
+    [
+      {
+            "date": "2019-02-02",
+            "sum": "101688416"
+      },
+      {
+            "date": "2019-02-01",
+            "sum": "101685788"
+      },
+      {
+            "date": "2019-01-31",
+            "sum": "101680144"
+      },
+      ...
+      {
+            "date": "2018-03-31",
+            "sum": "99985096"
+      },
+      {
+            "date": "2018-03-29",
+            "sum": "99984072"
+      }
+    ]
+
+## トランザクション手数料分析 [GET /statistics/fees]
+
+VIPSTARCOINブロックチェーン上のトランザクション手数料を日別にカウントして取得する。
+
++ Parameters
+  + `days`: 14 (number, optional) - 取得対象期間
+
++ Response 200 (application/json)
+  + Body
+    [
+      {
+            "date": "2019-02-02",
+            "fee": 464317941507.42126
+      },
+      {
+            "date": "2019-02-01",
+            "fee": 464564183528.6038
+      },
+      {
+            "date": "2019-01-31",
+            "fee": 466191300825.99146
+      },
+      ...
+      {
+            "date": "2018-03-31",
+            "fee": 390625
+      },
+      {
+            "date": "2018-03-29",
+            "fee": 28389394.89194499
+      }
+    ]
+
+## トランザクション数分析 [GET /statistics/transactions]
+
+VIPSTARCOINブロックチェーン上のトランザクション数とブロック生成数を日別にカウントして取得する。
+
++ Parameters
+  + `days`: 14 (number, optional) - 取得対象期間
+
++ Response 200 (application/json)
+  + Body
+    [
+      {
+            "date": "2019-02-02",
+            "transaction_count": 1133,
+            "block_count": 671
+      },
+      {
+            "date": "2019-02-01",
+            "transaction_count": 2306,
+            "block_count": 1411
+      },
+      {
+            "date": "2019-01-31",
+            "transaction_count": 2428,
+            "block_count": 1402
+      },
+      ...
+      {
+            "date": "2018-03-31",
+            "transaction_count": 257,
+            "block_count": 256
+      },
+      {
+            "date": "2018-03-29",
+            "transaction_count": 1052,
+            "block_count": 1018
+      }
+    ]
+
+## トランザクション出力分析 [GET /statistics/outputs]
+
+VIPSTARCOINブロックチェーン上のトランザクション出力数を日別にカウントして取得する。
+
++ Parameters
+  + `days`: 14 (number, optional) - 取得対象期間
+
++ Response 200 (application/json)
+  + Body
+    [
+      {
+            "date": "2019-02-02",
+            "sum": "2000903490630521"
+      },
+      {
+            "date": "2019-02-01",
+            "sum": "25951494563013299"
+      },
+      {
+            "date": "2019-01-31",
+            "sum": "21564938050008385"
+      },
+      ...
+      {
+            "date": "2018-03-31",
+            "sum": 0
+      },
+      {
+            "date": "2018-03-29",
+            "sum": "5999999999999515200"
+      }
+    ]
+
+## 採掘難易度分析 [GET /statistics/difficulty]
+
+VIPSTARCOINブロックチェーン上の採掘難易度（difficulty）を日別にカウントして取得する。
+
++ Parameters
+  + `days`: 14 (number, optional) - 取得対象期間
+
++ Response 200 (application/json)
+  + Body
+    [
+      {
+            "date": "2019-02-02",
+            "sum": 5114256448.4982195
+      },
+      {
+            "date": "2019-02-01",
+            "sum": 5401415466.794309
+      },
+      {
+            "date": "2019-01-31",
+            "sum": 5616631498.414961
+      },
+      ...
+      {
+            "date": "2018-03-31",
+            "sum": 1
+      },
+      {
+            "date": "2018-03-29",
+            "sum": 1
+      }
+    ]
+
+## ステーク分析 [GET /statistics/stake]
+
+VIPSTARCOINブロックチェーン上のステーク（POS）分析を行う。
+
++ Parameters
+  + `days`: 14 (number, optional) - 取得対象期間
+
++ Response 200 (application/json)
+  + Body
+    [
+      {
+            "date": "2019-02-02",
+            "sum": 0.0017837406054202751
+      },
+      {
+            "date": "2019-02-01",
+            "sum": 0.003418836160388861
+      },
+      {
+            "date": "2019-01-31",
+            "sum": 0.003408926490358748
+      },
+      ...
+      {
+            "date": "2018-03-31",
+            "sum": 5.2156158053e-10
+      },
+      {
+            "date": "2018-03-29",
+            "sum": 1.46037242549e-8
+      }
+    ]
+
+## 統計情報取得 [GET /statistics/total]
+
+直近24時間の統計情報を取得する。
+
++ Response 200 (application/json)
+  + Body
+    {
+      "n_blocks_mined": 1411,
+      "time_between_blocks": 61.16241134751773,
+      "mined_currency_amount": 652650000000000,
+      "transaction_fees": 652650096655930,
+      "number_of_transactions": 2332,
+      "outputs_volume": 7503681048132527,
+      "difficulty": 5229219358.241021,
+      "stake": 0.0034038704616443914
+    }
+
+## 残高分布取得 [GET /statistics/balance-intervals]
+
+VIPSTARCOIN残高の分布を取得する。
+
++ Response 200 (application/json)
+  + Body
+    [
+      {
+            "max": 0.001,
+            "min": 0,
+            "count": 2,
+            "sum": 0.002
+      },
+      {
+            "max": 0.01,
+            "min": 0.001,
+            "count": 220,
+            "sum": 1.28513606
+      },
+      {
+            "max": 0.1,
+            "min": 0.01,
+            "count": 678,
+            "sum": 40.11070923
+      },
+      {
+            "max": 1,
+            "min": 0.1,
+            "count": 1151,
+            "sum": 675.22379719
+      },
+      {
+            "max": 10,
+            "min": 1,
+            "count": 1466,
+            "sum": 6473.46071993
+      },
+      {
+            "max": 100,
+            "min": 10,
+            "count": 1213,
+            "sum": 73025.40814118
+      },
+      {
+            "max": 1000,
+            "min": 100,
+            "count": 1854,
+            "sum": 764792.89309746
+      },
+      {
+            "max": 10000,
+            "min": 1000,
+            "count": 1271,
+            "sum": 5266601.61765487
+      },
+      {
+            "max": 100000,
+            "min": 10000,
+            "count": 927,
+            "sum": 42717368.72275975
+      },
+      {
+            "max": 1000000,
+            "min": 100000,
+            "count": 789,
+            "sum": 288681335.63153094
+      },
+      {
+            "max": 10000000,
+            "min": 1000000,
+            "count": 512,
+            "sum": 1606668379.7476463
+      },
+      {
+            "max": 100000000,
+            "min": 10000000,
+            "count": 207,
+            "sum": 5918342215.27928
+      },
+      {
+            "max": 1000000000,
+            "min": 100000000,
+            "count": 26,
+            "sum": 7584284352.087332
+      },
+      {
+            "max": 10000000000,
+            "min": 1000000000,
+            "count": 15,
+            "sum": 36513493397.53818
+      },
+      {
+            "max": 100000000000,
+            "min": 10000000000,
+            "count": 1,
+            "sum": 10000024024.4825
+      }
+    ]
+
+## USD建残高分布残高取得 [GET /statistics/richer-than]
+
+USD建でVIPSTARCOIN残高の分布を取得する。
+
++ Response 200 (application/json)
+  + Body
+    [
+      {
+            "amount_usd": 1,
+            "count_addresses": 2291
+      },
+      {
+            "amount_usd": 100,
+            "count_addresses": 600
+      },
+      {
+            "amount_usd": 1000,
+            "count_addresses": 170
+      },
+      {
+            "amount_usd": 10000,
+            "count_addresses": 34
+      },
+      {
+            "amount_usd": 100000,
+            "count_addresses": 5
+      },
+      {
+            "amount_usd": 1000000,
+            "count_addresses": 0
+      },
+      {
+            "amount_usd": 10000000,
+            "count_addresses": 0
+      }
+    ]
+
+## リッチリスト取得 [GET /statistics/richest-addresses-list]
+
+VIPSTARCOINのリッチリストを取得する。
+
++ Response 200 (application/json)
+  + Body
+    [
+      {
+            "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
+            "blocks_mined": 0,
+            "balance": 10000024024.4825
+      },
+      ...
+    ]
 
 # Group utils
 
