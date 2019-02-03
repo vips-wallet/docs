@@ -131,25 +131,139 @@ insight APIドキュメント
 
 ## 一覧取得 [GET /blocks]
 
+VIPSTARCOINブロックチェーン上のブロックを一覧取得する。
+
 + Parameters
-  + `blockDate`: (string, optional)
-  + `startTimestamp`: (number, optional)
-  + `limit`: (number, optional)
+  + `blockDate`: 2019-01-01 (string, optional) - 取得対象日
+  + `startTimestamp`: 1549198096 (number, optional) - 取得対象時間（指定以前のtimeのブロックのみ取得）
+  + `limit`: 100 (number, optional) - 取得上限
+
++ Response 200 (application/json)
+  + Body
+    {
+      "blocks": [
+            {
+                  "height": 428613,
+                  "size": 620,
+                  "hash": "9c6180cb590954c62a6d18e1927d5ccda50de980835a9ccbe38b6d24a77c7c45",
+                  "time": 1549198096,
+                  "txlength": 2,
+                  "poolInfo": {},
+                  "isMainChain": true,
+                  "minedBy": "VQscHQUVDXpN7fNTbxVTYAsKGr5a8xSswQ"
+            },
+            {
+                  "height": 428612,
+                  "size": 621,
+                  "hash": "d4d7de84927d729cd5a0b06f5c888c19b8502b16e279624a82401775414df5e5",
+                  "time": 1549198064,
+                  "txlength": 2,
+                  "poolInfo": {},
+                  "isMainChain": true,
+                  "minedBy": "VVjp1SKo74GLjyNaDjEkUGHmcjqNgDJsPv"
+            },
+            ...
+            {
+                  "height": 428415,
+                  "size": 366,
+                  "hash": "00000000003b1709151a9e6521cb7cdf0149bec6629c8f8800a4013522ca632e",
+                  "time": 1549185953,
+                  "txlength": 1,
+                  "poolInfo": {},
+                  "isMainChain": true,
+                  "minedBy": "VPn9k5AjugJNdzFP2W71C6AhT19oLnnCd7"
+            },
+            {
+                  "height": 428414,
+                  "size": 620,
+                  "hash": "2c26183b1843e681a9ff026136004da26f8d5cfba2b2f53ca9078604ba026b31",
+                  "time": 1549185872,
+                  "txlength": 2,
+                  "poolInfo": {},
+                  "isMainChain": true,
+                  "minedBy": "VWTeUyCZsePENeFSMz7ydfY9HNevKiCChD"
+            }
+      ],
+      "length": 200,
+      "pagination": {
+            "next": "2019-02-04",
+            "prev": "2019-02-02",
+            "currentTs": 1549238399,
+            "current": "2019-02-03",
+            "isToday": true,
+            "more": true,
+            "moreTs": 1549185872
+      }
+    }
 
 ## 指定ブロック情報取得 [GET /block/{blockHash}]
 
+ブロックハッシュを指定して指定ブロックの情報を取得する。
+
 + Parameters
-  + `blockHash`: (string, required)
+  + `blockHash`: 0000d068e1d30f79fb64446137106be9c6ee69a6a722295c131506b1ee09b77c (string, required) - ブロックハッシュ
+
++ Response 200 (application/json)
+  + Body
+    {
+      "hash": "0000d068e1d30f79fb64446137106be9c6ee69a6a722295c131506b1ee09b77c",
+      "size": 344,
+      "height": 0,
+      "version": 1,
+      "merkleroot": "3821b1e4634626248389576cae0c9310c365a46ace444a6e0bfb9e1f421bb625",
+      "tx": [
+            "3821b1e4634626248389576cae0c9310c365a46ace444a6e0bfb9e1f421bb625"
+      ],
+      "time": 1522223204,
+      "nonce": 135269,
+      "bits": "1f00ffff",
+      "difficulty": 0.1525,
+      "chainwork": "0000000000000000000000000000000000000000000000000000000000010001",
+      "confirmations": 428581,
+      "previousblockhash": null,
+      "nextblockhash": "0000e0e7e28aef099b64e3fc81d8b9e7992e2adc56e2e573f8c025ce634db4e4",
+      "reward": 1,
+      "isMainChain": true,
+      "poolInfo": {}
+    }
+
++ Response 404 (text/plain)
+    Not Found
 
 ## 指定ブロック生データ取得 [GET /rawblock/{blockHash}]
 
+ブロックハッシュを指定して指定ブロックの生データを取得する。
+
 + Parameters
-  + `blockHash`: (string, required)
+  + `blockHash`: 0000d068e1d30f79fb64446137106be9c6ee69a6a722295c131506b1ee09b77c (string, required) - ブロックハッシュ
+
++ Response 200 (application/json)
+  + Body
+    {
+      "rawblock": "01000000000000000000000000000000000000000000000000000000000000000000000025b61b421f9efb0b6e4a44ce6aa465c310930cae6c57898324264663e4b121386448bb5affff001f65100200e965ffd002cd6ad0e2dc402b8044de833e06b23127ea8c3d80aec9141077149556e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b4210000000000000000000000000000000000000000000000000000000000000000ffffffff000101000000010000000000000000000000000000000000000000000000000000000000000000ffffffff230004bf91221d01041a766970207175616c697479206f6e2074686520776f726c642121ffffffff0100e1f505000000004341766970207175616c697479206f6e2074686520776f726c642121766970207175616c697479206f6e2074686520776f726c642121766970207175616c697479206fac00000000"
+    }
+
++ Response 404 (text/plain)
+    Not Found
 
 ## ブロック高指定 [GET /block-index/{height}]
 
+ブロック高を指定してブロックハッシュを取得する。
+
 + Parameters
-  + `height`: (number, required)
+  + `height`: 0 (number, required) - ブロック高
+
++ Response 200 (application/json)
+  + Body
+    {
+      "blockHash": "0000d068e1d30f79fb64446137106be9c6ee69a6a722295c131506b1ee09b77c"
+    }
+
++ Response 400 (text/plain)
+    JSON value is not an integer as expected. Code:-1
+
++ Response 400 (text/plain)
+    Block height out of range. Code:-8
 
 # Group transaction
 
