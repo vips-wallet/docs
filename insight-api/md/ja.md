@@ -582,7 +582,7 @@ VRC20トークンの残高一覧を取得する。
 
 ## トークン一覧取得 [GET /tokens]
 
-全トークン一覧を取得します。
+全トークン一覧を取得する。
 
 + Response 200 (application/json)
   + Body
@@ -643,7 +643,7 @@ VRC20トークンの残高一覧を取得する。
 
 ## トランザクション履歴取得 [GET /tokens/{contractBaseAddress}/transactions]
 
-コントラクトベースアドレスを指定してトークンのトランザクション履歴を取得します。
+コントラクトベースアドレスを指定してトークンのトランザクション履歴を取得する。
 
 + Parameters
   + `contractBaseAddress`: VNSZysD5evHML3Brt833UoQUmn5Hr5tRPq (string, required) - コントラクトベースアドレス
