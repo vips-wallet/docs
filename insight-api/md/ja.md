@@ -46,23 +46,16 @@ insight APIドキュメント
       ]
     }
 
-## 残高取得 [GET /addr/{addr}/balance]
-
-指定アドレスの検証済み残高を取得する。
-
-+ Parameters
-  + `addr`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス
-
-## 未検証残高取得 [GET /addr/{addr}/unconfirmedBalance]
-
-指定アドレスの未検証残高を取得する。
-
-+ Parameters
-  + `addr`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス
-
 ## UTXO取得 [GET /addr/{addr}/utxo]
 
 指定アドレスのUTXOを取得する。
+
++ Parameters
+  + `addr`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス
+
+## 検証済み残高取得 [GET /addr/{addr}/balance]
+
+指定アドレスの検証済み残高を取得する。
 
 + Parameters
   + `addr`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス
@@ -81,23 +74,16 @@ insight APIドキュメント
 + Parameters
   + `addr`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス
 
+## 未検証残高取得 [GET /addr/{addr}/unconfirmedBalance]
+
+指定アドレスの未検証残高を取得する。
+
++ Parameters
+  + `addr`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス
+
+# Group addresses
+
 カンマ区切りリストのVIPSTARCOINアドレスを指定し、複数アドレスの情報を一括で取得する。
-
-## トランザクション履歴取得 [POST /addrs/txs]
-
-指定アドレスのトランザクション履歴を取得する。
-
-+ Parameters
-  + `addrs`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス(カンマ区切りリスト)
-  + `from`: 0 (int, optional) - 開始オフセット
-  + `to`: 10 (int, optional) - 終了オフセット
-
-## UTXO取得 [POST /addrs/utxo]
-
-指定アドレスのUTXOを取得する。
-
-+ Parameters
-  + `addrs`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス(カンマ区切りリスト)
 
 ## 検証済み残高取得 [GET /addrs/{addrs}/balance]
 
@@ -106,9 +92,16 @@ insight APIドキュメント
 + Parameters
   + `addrs`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス(カンマ区切りリスト)
 
-## トランザクション履歴取得 [GET /addrs/{addrs}/txs]
+## UTXO取得 [GET /addrs/{addrs}/utxo]
 
-指定アドレスのトランザクション履歴を取得する。
+指定アドレスのUTXOを取得する。
+
++ Parameters
+  + `addrs`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス(カンマ区切りリスト)
+
+## UTXO取得 [POST /addrs/utxo]
+
+指定アドレスのUTXOを取得する。
 
 + Parameters
   + `addrs`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス(カンマ区切りリスト)
@@ -120,12 +113,21 @@ insight APIドキュメント
 + Parameters
   + `addrs`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス(カンマ区切りリスト)
 
-## UTXO取得 [GET /addrs/{addrs}/utxo]
+## トランザクション履歴取得 [GET /addrs/{addrs}/txs]
 
-指定アドレスのUTXOを取得する。
+指定アドレスのトランザクション履歴を取得する。
 
 + Parameters
   + `addrs`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス(カンマ区切りリスト)
+
+## トランザクション履歴取得 [POST /addrs/txs]
+
+指定アドレスのトランザクション履歴を取得する。
+
++ Parameters
+  + `addrs`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス(カンマ区切りリスト)
+  + `from`: 0 (int, optional) - 開始オフセット
+  + `to`: 10 (int, optional) - 終了オフセット
 
 # Group blocks
 
