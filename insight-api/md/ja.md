@@ -862,6 +862,7 @@ VIPSTARCOINブロックチェーン上のブロックを一覧取得する。
     }
 
 + Response 404 (text/plain)
+  + Body
     Not Found
 
 ## 指定ブロック生データ取得 [GET /rawblock/{blockHash}]
@@ -878,6 +879,7 @@ VIPSTARCOINブロックチェーン上のブロックを一覧取得する。
     }
 
 + Response 404 (text/plain)
+  + Body
     Not Found
 
 ## ブロック高指定 [GET /block-index/{height}]
@@ -894,9 +896,11 @@ VIPSTARCOINブロックチェーン上のブロックを一覧取得する。
     }
 
 + Response 400 (text/plain)
+  + Body
     JSON value is not an integer as expected. Code:-1
 
 + Response 400 (text/plain)
+  + Body
     Block height out of range. Code:-8
 
 # Group transaction
@@ -1080,6 +1084,7 @@ VRC20トークン情報をクエリ文字列で部分一致検索して取得す
       ]
     }
 + Response 422 (text/plain)
+  + Body
     Bad query
 
 ## アドレス指定検索 [GET /erc20/balances{?balanceAddress}]
@@ -1118,6 +1123,7 @@ VRC20トークンの保有状況をVIPSTARCOINアドレスおよびコントラ�
     ]
 
 + Response 404 (text/plain)
+  + Body
     Not Found
 
 ## トークン情報取得 [GET /erc20/{contractAddress}]
@@ -1142,6 +1148,7 @@ VRC20トークンの基本情報を取得する。
     }
 
 + Response 404 (text/plain)
+  + Body
     Not Found
 
 ## 転送履歴取得 [GET /erc20/{contractAddress}/transfers]
@@ -1175,6 +1182,7 @@ VRC20トークンの転送履歴を取得する
 }
 
 + Response 404 (text/plain)
+  + Body
     Not Found
 
 ## トークン残高一覧取得 [GET /erc20/{contractAddress}/balances]
@@ -1210,6 +1218,7 @@ VRC20トークンの残高一覧を取得する。
     }
 
 + Response 404 (text/plain)
+  + Body
     Not Found
 
 # Group tokens
@@ -1270,9 +1279,11 @@ VRC20トークンの残高一覧を取得する。
   + `accountAddress`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス
 
 + Response 200 (text/plain)
+  + Body
     5000000000000000000000
 
 + Response 404 (text/plain)
+  + Body
     Not Found
 
 ## トランザクション履歴取得 [GET /tokens/{contractBaseAddress}/transactions]
@@ -1322,6 +1333,7 @@ VRC20トークンの残高一覧を取得する。
   + `format`: object (string, optional) - JSON形式で取得する場合指定
 
 + Response 200 (text/plain)
+  + Body
     10000000000000000000000
 
 + Response 200 (application/json)
@@ -1331,6 +1343,7 @@ VRC20トークンの残高一覧を取得する。
     }
 
 + Response 404 (text/plain)
+  + Body
     Not Found
 
 # Group messages
