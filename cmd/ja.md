@@ -7,7 +7,7 @@ VIPSTARCOIN コマンドリスト
 
 # Group Blockchain
 
-## コールコントラクト [GET callcontract "address" "data" "address" "gasLimit"]
+## コールコントラクト [GET /callcontract "address" "data" "address" "gasLimit"]
 
 コントラクトを呼び出す
 
