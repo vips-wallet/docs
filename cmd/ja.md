@@ -1,11 +1,38 @@
+FORMAT: 1A
+HOST: http://127.0.0.1:31916
 # VIPSTARCOIN cmd_list
-## Blockchain
-### callcontract "address" "data" "address"
+VIPSTARCOIN コマンドリスト
+# Group Blockchain
+## コールコントラクト [GET callcontract "address" "data" "address" "gasLimit"]
 コントラクトを呼び出す
-#### 引数
-`"address"`（必須） コントラクトアドレス  
-`"data"`（必須） 関数名ハッシュ （ERC20で定義されている関数名ハッシュは[const.js](https://github.com/vips-wallet/vipstarcoinjs-wallet-core/blob/master/src/const.js#L70)参照）  
-`"address"`（任意） gethexaddressでVアドレスを16進数化したもの
++ Parameters
+  + `address`: 813cd81362ce245df1c50aac7e7769c852d60968 (string, required) - コントラクトアドレス
+  + `data`: 06fdde03 (string, required) - 関数名ハッシュ、[const.js](https://github.com/vips-wallet/vipstarcoinjs-wallet-core/blob/master/src/const.js#L70)参照
+  + `address`: 0c97b859de459789c2df463ff28160d1508f555e (string, optional) - gethexaddressでVアドレスを16進数化したもの
+  + `gasLimit`: ??? (string, optional) - ガスの制限
++ Response 200 (application/json)
+      + Body
+      {
+        "address": "(コントラクトアドレス)",
+        "executionResult": {
+          "gasUsed": (数字),
+          "excepted": "None", ←（詳細不明）
+          "newAddress": "（コントラクトアドレス）",
+          "output": "（16進数の文字列）", ←（結果が返ってくる、ethabiというソフトで解析可能？）
+          "codeDeposit": (数字),
+          "gasRefunded": （数字）,
+          "depositSize": （数字）,
+          "gasForDeposit": （数字）
+        },
+        "transactionReceipt": {
+          "stateRoot": "（詳細不明、16進数の文字列）",
+          "gasUsed": (数字),
+          "bloom": "(数字、検証時は0の羅列)",
+          "log": [
+          ]
+        }
+      }
+      
 #### 結果の詳細
 ```
 {
