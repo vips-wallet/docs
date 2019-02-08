@@ -628,3 +628,75 @@ logeventsを有効にする必要あり
   "nextblock": （次のブロック高）
 }
 ```
+## Control
+### getinfo
+様々な情報を返す  
+#### 引数
+（無し）
+#### 結果の詳細
+```
+{
+  "version": （サーバーバージョン数字）,
+  "protocolversion": （プロトコルバージョン、数字）,
+  "walletversion": （ウォレットバージョン、数字）,
+  "balance": （トータルの残高）,
+  "stake": （stakeしている数量）,
+  "blocks": （現在のブロック高）,
+  "timeoffset": （タイムオフセット）,
+  "connections": （接続数）,
+  "proxy": （ホスト:ポート、proxy通してない場合は無し）,
+  "difficulty": {
+    "proof-of-work": （PoWの採掘難易度）,
+    "proof-of-stake": （PoSの採掘難易度）
+  },
+  "testnet": （testnetかどうか、true/false）,
+  "moneysupply": （VIPSの総額）,
+  "keypoololdest": 最も古いキーのタイムスタンプ,
+  "keypoolsize": （pre-generatedされているキーの数）,
+  "unlocked_until": （送金のためにロック解除した時のタイムスタンプ、ロックしているときは0）,
+  "paytxfee": （1kbあたりに設定されている手数料）,
+  "relayfee": （1kbあたりの中継手数料）,
+  "errors": （エラーメッセージ）
+}
+```
+---
+### getmemoryinfo
+メモリ使用量についての情報を返す  
+#### 引数
+（無し）
+#### 結果の詳細
+```
+{
+  "locked": {
+    "used": （使用バイト数）,
+    "free": （利用可能なバイト数）,
+    "total": （トータルのバイト数）,
+    "locked": （ロックに成功したバイト数）,
+    "chunks_used": （割り当てられたチャンク数）,
+    "chunks_free": （未使用のチャンク数）
+  }
+}
+```
+---
+### help "command"
+コマンドの詳細を返す  
+#### 引数
+`"command"`（任意） 指定した場合はそのコマンドについての詳細、していない場合はコマンド一覧を返す  
+#### 結果の詳細（引数なし）
+```
+== Blockchain ==
+callcontract "address" "data" ( address )
+getaccountinfo "address"
+（中略）
+walletpassphrase "passphrase" timeout
+walletpassphrasechange "oldpassphrase" "newpassphrase"
+```
+---
+### stop
+VIPSTARCOIN-Coreをストップする  
+#### 引数
+（無し）
+#### 結果の詳細
+```
+VIPSTARCOIN server stopping
+```
