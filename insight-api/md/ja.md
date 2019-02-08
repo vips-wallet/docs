@@ -1405,8 +1405,51 @@ VRC20トークンの残高一覧を取得する。
     Not Found
 
 # Group messages
-## ？？？ [GET /messages/verify]
-## ？？？ [POST /messages/verify]
+## 署名検証 [GET /messages/verify?{address,signature,message}]
+
+署名文字列の検証を行う。
+
++ Parameters
+  + `address`: VUmino3VbniKFyCzgYwpt8ZWfWumLGzSX4 (string, required) - 署名を行ったVIPSTARCOINアドレス
+  + `signature`: HNQZQEKK/YpQ9GwFoBkVI++76liDOchb5i0H6PrpV9sYKgZ6hdP6HkiKuNsSjhu4hV6Z2Rs4AH7MUN9vfmAIswg= (string, required) - 署名シグネチャ
+  + `message`: Hello, VIPSTARCOIN! (string, required) - 署名対象メッセージ
+
++ Response 200 (application/json)
+  + Body
+    {
+      "result": true
+    }
+
++ Response 400 (text/html)
+  + Body
+    Missing parameters (expected "address", "signature" and "message"). Code:1
+
++ Response 400 (text/html)
+  + Body
+    Unexpected error: Address has mismatched network type.. Code:1
+
+## 署名検証 [POST /messages/verify]
+
+署名文字列の検証を行う。
+
++ Parameters
+  + `address`: VUmino3VbniKFyCzgYwpt8ZWfWumLGzSX4 (string, required) - 署名を行ったVIPSTARCOINアドレス
+  + `signature`: HNQZQEKK/YpQ9GwFoBkVI++76liDOchb5i0H6PrpV9sYKgZ6hdP6HkiKuNsSjhu4hV6Z2Rs4AH7MUN9vfmAIswg= (string, required) - 署名シグネチャ
+  + `message`: Hello, VIPSTARCOIN! (string, required) - 署名対象メッセージ
+
++ Response 200 (application/json)
+  + Body
+    {
+      "result": true
+    }
+
++ Response 400 (text/html)
+  + Body
+    Missing parameters (expected "address", "signature" and "message"). Code:1
+
++ Response 400 (text/html)
+  + Body
+    Unexpected error: Address has mismatched network type.. Code:1
 
 # Group statistics
 ## 総供給枚数取得 [GET /supply]
