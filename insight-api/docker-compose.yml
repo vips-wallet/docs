@@ -1,10 +1,11 @@
 version: '3'
 
 services:
-  aglio:
-    build: .
+  snowboard:
+    image: quay.io/bukalapak/snowboard:latest
     ports:
-      - "3000:3000"
+      - "3000:8088"
     volumes:
-      - ".:/projects"
+      - ".:/doc"
     tty: true
+    command: html -s -o html/ja.html md/ja.md
