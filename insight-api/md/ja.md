@@ -5,6 +5,19 @@ HOST: https://insight.vipstarco.in/api
 
 insight APIドキュメント
 
+## License
+
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en)
+
+## Author
+
+- 海野山猿 (Yamazaru Umino)
+- ましろ (white)
+
+## Original
+
+See [GitHub repository](https://github.com/vips-wallet/docs/).
+
 # Group address
 
 ## アドレス情報 [GET /addr/{addr}]

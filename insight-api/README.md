@@ -24,3 +24,12 @@ docker-compose up -d
 
 # open http://localhost:3000/ in your browser
 ```
+
+## license
+
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en)
+
+## author
+
+- 海野山猿 (Yamazaru Umino)
+- ましろ (white)
