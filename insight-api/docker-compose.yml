@@ -8,4 +8,4 @@ services:
     volumes:
       - ".:/doc"
     tty: true
-    command: html -s -o html/ja.html md/ja.md
+    command: -w html -s -o html/ja.html md/ja.md
