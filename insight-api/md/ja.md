@@ -239,7 +239,7 @@ See [GitHub repository](https://github.com/vips-wallet/docs/).
   + Body
     Invalid address: Input string too short. Code:1
 
-## UTXO取得 [GET /addrs/{addrs}/utxo]
+## UTXO取得 GETリクエスト版 [GET /addrs/{addrs}/utxo]
 
 指定アドレスのUTXOを取得する。
 
@@ -316,7 +316,7 @@ See [GitHub repository](https://github.com/vips-wallet/docs/).
   + Body
     Invalid address: Input string too short. Code:1
 
-## UTXO取得 [POST /addrs/utxo]
+## UTXO取得 POSTリクエスト版 [POST /addrs/utxo]
 
 指定アドレスのUTXOを取得する。
 
@@ -454,7 +454,7 @@ See [GitHub repository](https://github.com/vips-wallet/docs/).
       }
     ]
 
-## トランザクション履歴取得 [GET /addrs/{addrs}/txs]
+## トランザクション履歴取得 GETリクエスト版 [GET /addrs/{addrs}/txs]
 
 指定アドレスのトランザクション履歴を取得する。
 
@@ -614,7 +614,7 @@ See [GitHub repository](https://github.com/vips-wallet/docs/).
   + Body
     Invalid address: Input string too short. Code:1
 
-## トランザクション履歴取得 [POST /addrs/txs]
+## トランザクション履歴取得 POSTリクエスト版 [POST /addrs/txs]
 
 指定アドレスのトランザクション履歴を取得する。
 
@@ -1418,7 +1418,7 @@ VRC20トークンの残高一覧を取得する。
     Not Found
 
 # Group messages
-## 署名検証 [GET /messages/verify?{address,signature,message}]
+## 署名検証 GETリクエスト版 [GET /messages/verify?{address,signature,message}]
 
 署名文字列の検証を行う。
 
@@ -1441,7 +1441,7 @@ VRC20トークンの残高一覧を取得する。
   + Body
     Unexpected error: Address has mismatched network type.. Code:1
 
-## 署名検証 [POST /messages/verify]
+## 署名検証 POSTリクエスト版 [POST /messages/verify]
 
 署名文字列の検証を行う。
 
