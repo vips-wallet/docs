@@ -2,10 +2,10 @@ version: '3'
 
 services:
   snowboard:
-    image: quay.io/bukalapak/snowboard:latest
+    build: .
     ports:
       - "3000:8088"
     volumes:
       - ".:/doc"
     tty: true
-    command: -w html -s -o html/ja.html md/ja.md
+    command: http md/ja.md

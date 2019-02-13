@@ -6,23 +6,47 @@ This document is [vipstarcoin-api](https://github.com/vips-wallet/vipstarcoin-ap
 
 ## usage
 
-### use CLI
+### preview
+
+#### use CLI
 
 ```
-npm install -g aglio --unsafe-perm
+npm install -g snowboard@1.8.12 --unsafe-perm
 git clone https://github.com/vips-wallet/docs.git
 cd docs/insight-api
-aglio -i md/ja.md -s
+snowboard http md/ja.md
+
+# open http://localhost:8088/ in your browser
 ```
 
-### use Docker
+#### use Docker
 
 ```
 git clone https://github.com/vips-wallet/docs.git
 cd docs/insight-api
-docker-compose up -d
+docker-compose -f docker-compose-http.yml up -d
 
 # open http://localhost:3000/ in your browser
+```
+
+### generate html
+
+#### use CLI
+
+```
+npm install -g snowboard@1.8.12 --unsafe-perm
+git clone https://github.com/vips-wallet/docs.git
+cd docs/insight-api
+snowboard html -o html/ja.html md/ja.md
+```
+
+#### use Docker
+
+```
+git clone https://github.com/vips-wallet/docs.git
+cd docs/insight-api
+docker-compose -f docker-compose-html.yml up
+docker-compose -f docker-compose-html.yml down
 ```
 
 ## license

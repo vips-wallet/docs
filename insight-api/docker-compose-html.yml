@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  snowboard:
+    build: .
+    ports:
+      - "3000:8088"
+    volumes:
+      - ".:/doc"
+    tty: true
+    command: html -o html/ja.html md/ja.md
