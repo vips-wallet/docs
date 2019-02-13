@@ -1071,7 +1071,7 @@
                   <div class="ui bottom attached active tab segment" data-tab="body">
                     <pre style="white-space: inherit">
                       <code class="language-json">[
-{
+  {
     &quot;address&quot;: &quot;VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g&quot;,
     &quot;txid&quot;: &quot;40fa77f84fb2646420f93ede05fe400a3b6fdb14df05a00d107de2eb5c7c7d84&quot;,
     &quot;vout&quot;: 0,
@@ -1082,51 +1082,67 @@
     &quot;isStake&quot;: false,
     &quot;height&quot;: 383487,
     &quot;confirmations&quot;: 46563
-},
-{
-    &quot;address&quot;: &quot;VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g&quot;,
-    &quot;txid&quot;: &quot;671f2613ae0bde8cd8fe63c4d671a3d3a75358d0481bf2993712ca1917846f61&quot;,
-    &quot;vout&quot;: 0,
-    &quot;scriptPubKey&quot;: &quot;76a9140c97b859de459789c2df463ff28160d1508f555e88ac&quot;,
-    &quot;amount&quot;: 2019,
-    &quot;satoshis&quot;: 201900000000,
-    &quot;isCoinBase&quot;: false,
-    &quot;isStake&quot;: false,
-    &quot;height&quot;: 383437,
-    &quot;confirmations&quot;: 46613
-},
-...
-{
-    &quot;address&quot;: &quot;VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g&quot;,
-    &quot;txid&quot;: &quot;29ce468caa3ac1ed7caed580f6f732861db456e6158c71137aa644625ebed9e0&quot;,
-    &quot;vout&quot;: 1,
-    &quot;scriptPubKey&quot;: &quot;76a9140c97b859de459789c2df463ff28160d1508f555e88ac&quot;,
-    &quot;amount&quot;: 5000000000,
-    &quot;satoshis&quot;: 500000000000000000,
-    &quot;isCoinBase&quot;: false,
-    &quot;isStake&quot;: false,
-    &quot;height&quot;: 331232,
-    &quot;confirmations&quot;: 98818
-},
-{
-    &quot;address&quot;: &quot;VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g&quot;,
-    &quot;txid&quot;: &quot;96e8bb7312b45b65171b7ea0c8999ca9f91ef947863e9b31089f38ea07f667a7&quot;,
-    &quot;vout&quot;: 0,
-    &quot;scriptPubKey&quot;: &quot;76a9140c97b859de459789c2df463ff28160d1508f555e88ac&quot;,
-    &quot;amount&quot;: 5000000000,
-    &quot;satoshis&quot;: 500000000000000000,
-    &quot;isCoinBase&quot;: false,
-    &quot;isStake&quot;: false,
-    &quot;height&quot;: 331232,
-    &quot;confirmations&quot;: 98818
-}
-]
-</code>
+  }
+]</code>
                     </pre>
                   </div>
                   <div class="ui bottom attached tab segment" data-tab="schema">
                     <pre style="white-space: inherit">
-                      <code class="language-json"></code>
+                      <code class="language-json">{
+  &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
+  &quot;type&quot;: &quot;array&quot;,
+  &quot;items&quot;: {
+    &quot;anyOf&quot;: [
+      {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;properties&quot;: {
+          &quot;address&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          },
+          &quot;txid&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          },
+          &quot;vout&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          },
+          &quot;scriptPubKey&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          },
+          &quot;amount&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          },
+          &quot;satoshis&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          },
+          &quot;isCoinBase&quot;: {
+            &quot;type&quot;: &quot;boolean&quot;
+          },
+          &quot;isStake&quot;: {
+            &quot;type&quot;: &quot;boolean&quot;
+          },
+          &quot;height&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          },
+          &quot;confirmations&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          }
+        },
+        &quot;required&quot;: [
+          &quot;address&quot;,
+          &quot;txid&quot;,
+          &quot;vout&quot;,
+          &quot;scriptPubKey&quot;,
+          &quot;amount&quot;,
+          &quot;satoshis&quot;,
+          &quot;isCoinBase&quot;,
+          &quot;isStake&quot;,
+          &quot;height&quot;,
+          &quot;confirmations&quot;
+        ]
+      }
+    ]
+  }
+}</code>
                     </pre>
                   </div>
                 </div>
@@ -2992,7 +3008,7 @@
                   <div class="ui bottom attached active tab segment" data-tab="body">
                     <pre style="white-space: inherit">
                       <code class="language-json">[
-{
+  {
     &quot;address&quot;: &quot;VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g&quot;,
     &quot;txid&quot;: &quot;40fa77f84fb2646420f93ede05fe400a3b6fdb14df05a00d107de2eb5c7c7d84&quot;,
     &quot;vout&quot;: 0,
@@ -3002,52 +3018,68 @@
     &quot;isCoinBase&quot;: false,
     &quot;isStake&quot;: false,
     &quot;height&quot;: 383487,
-    &quot;confirmations&quot;: 46578
-},
-{
-    &quot;address&quot;: &quot;VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g&quot;,
-    &quot;txid&quot;: &quot;671f2613ae0bde8cd8fe63c4d671a3d3a75358d0481bf2993712ca1917846f61&quot;,
-    &quot;vout&quot;: 0,
-    &quot;scriptPubKey&quot;: &quot;76a9140c97b859de459789c2df463ff28160d1508f555e88ac&quot;,
-    &quot;amount&quot;: 2019,
-    &quot;satoshis&quot;: 201900000000,
-    &quot;isCoinBase&quot;: false,
-    &quot;isStake&quot;: false,
-    &quot;height&quot;: 383437,
-    &quot;confirmations&quot;: 46628
-},
-...
-{
-    &quot;address&quot;: &quot;VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g&quot;,
-    &quot;txid&quot;: &quot;29ce468caa3ac1ed7caed580f6f732861db456e6158c71137aa644625ebed9e0&quot;,
-    &quot;vout&quot;: 1,
-    &quot;scriptPubKey&quot;: &quot;76a9140c97b859de459789c2df463ff28160d1508f555e88ac&quot;,
-    &quot;amount&quot;: 5000000000,
-    &quot;satoshis&quot;: 500000000000000000,
-    &quot;isCoinBase&quot;: false,
-    &quot;isStake&quot;: false,
-    &quot;height&quot;: 331232,
-    &quot;confirmations&quot;: 98833
-},
-{
-    &quot;address&quot;: &quot;VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g&quot;,
-    &quot;txid&quot;: &quot;96e8bb7312b45b65171b7ea0c8999ca9f91ef947863e9b31089f38ea07f667a7&quot;,
-    &quot;vout&quot;: 0,
-    &quot;scriptPubKey&quot;: &quot;76a9140c97b859de459789c2df463ff28160d1508f555e88ac&quot;,
-    &quot;amount&quot;: 5000000000,
-    &quot;satoshis&quot;: 500000000000000000,
-    &quot;isCoinBase&quot;: false,
-    &quot;isStake&quot;: false,
-    &quot;height&quot;: 331232,
-    &quot;confirmations&quot;: 98833
-}
-]
-</code>
+    &quot;confirmations&quot;: 46563
+  }
+]</code>
                     </pre>
                   </div>
                   <div class="ui bottom attached tab segment" data-tab="schema">
                     <pre style="white-space: inherit">
-                      <code class="language-json"></code>
+                      <code class="language-json">{
+  &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
+  &quot;type&quot;: &quot;array&quot;,
+  &quot;items&quot;: {
+    &quot;anyOf&quot;: [
+      {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;properties&quot;: {
+          &quot;address&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          },
+          &quot;txid&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          },
+          &quot;vout&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          },
+          &quot;scriptPubKey&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          },
+          &quot;amount&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          },
+          &quot;satoshis&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          },
+          &quot;isCoinBase&quot;: {
+            &quot;type&quot;: &quot;boolean&quot;
+          },
+          &quot;isStake&quot;: {
+            &quot;type&quot;: &quot;boolean&quot;
+          },
+          &quot;height&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          },
+          &quot;confirmations&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          }
+        },
+        &quot;required&quot;: [
+          &quot;address&quot;,
+          &quot;txid&quot;,
+          &quot;vout&quot;,
+          &quot;scriptPubKey&quot;,
+          &quot;amount&quot;,
+          &quot;satoshis&quot;,
+          &quot;isCoinBase&quot;,
+          &quot;isStake&quot;,
+          &quot;height&quot;,
+          &quot;confirmations&quot;
+        ]
+      }
+    ]
+  }
+}</code>
                     </pre>
                   </div>
                 </div>
@@ -3493,7 +3525,7 @@
                   <div class="ui bottom attached active tab segment" data-tab="body">
                     <pre style="white-space: inherit">
                       <code class="language-json">[
-{
+  {
     &quot;address&quot;: &quot;VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g&quot;,
     &quot;txid&quot;: &quot;40fa77f84fb2646420f93ede05fe400a3b6fdb14df05a00d107de2eb5c7c7d84&quot;,
     &quot;vout&quot;: 0,
@@ -3503,52 +3535,68 @@
     &quot;isCoinBase&quot;: false,
     &quot;isStake&quot;: false,
     &quot;height&quot;: 383487,
-    &quot;confirmations&quot;: 46580
-},
-{
-    &quot;address&quot;: &quot;VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g&quot;,
-    &quot;txid&quot;: &quot;671f2613ae0bde8cd8fe63c4d671a3d3a75358d0481bf2993712ca1917846f61&quot;,
-    &quot;vout&quot;: 0,
-    &quot;scriptPubKey&quot;: &quot;76a9140c97b859de459789c2df463ff28160d1508f555e88ac&quot;,
-    &quot;amount&quot;: 2019,
-    &quot;satoshis&quot;: 201900000000,
-    &quot;isCoinBase&quot;: false,
-    &quot;isStake&quot;: false,
-    &quot;height&quot;: 383437,
-    &quot;confirmations&quot;: 46630
-},
-...
-{
-    &quot;address&quot;: &quot;VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g&quot;,
-    &quot;txid&quot;: &quot;29ce468caa3ac1ed7caed580f6f732861db456e6158c71137aa644625ebed9e0&quot;,
-    &quot;vout&quot;: 1,
-    &quot;scriptPubKey&quot;: &quot;76a9140c97b859de459789c2df463ff28160d1508f555e88ac&quot;,
-    &quot;amount&quot;: 5000000000,
-    &quot;satoshis&quot;: 500000000000000000,
-    &quot;isCoinBase&quot;: false,
-    &quot;isStake&quot;: false,
-    &quot;height&quot;: 331232,
-    &quot;confirmations&quot;: 98835
-},
-{
-    &quot;address&quot;: &quot;VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g&quot;,
-    &quot;txid&quot;: &quot;96e8bb7312b45b65171b7ea0c8999ca9f91ef947863e9b31089f38ea07f667a7&quot;,
-    &quot;vout&quot;: 0,
-    &quot;scriptPubKey&quot;: &quot;76a9140c97b859de459789c2df463ff28160d1508f555e88ac&quot;,
-    &quot;amount&quot;: 5000000000,
-    &quot;satoshis&quot;: 500000000000000000,
-    &quot;isCoinBase&quot;: false,
-    &quot;isStake&quot;: false,
-    &quot;height&quot;: 331232,
-    &quot;confirmations&quot;: 98835
-}
-]
-</code>
+    &quot;confirmations&quot;: 46563
+  }
+]</code>
                     </pre>
                   </div>
                   <div class="ui bottom attached tab segment" data-tab="schema">
                     <pre style="white-space: inherit">
-                      <code class="language-json"></code>
+                      <code class="language-json">{
+  &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
+  &quot;type&quot;: &quot;array&quot;,
+  &quot;items&quot;: {
+    &quot;anyOf&quot;: [
+      {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;properties&quot;: {
+          &quot;address&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          },
+          &quot;txid&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          },
+          &quot;vout&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          },
+          &quot;scriptPubKey&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          },
+          &quot;amount&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          },
+          &quot;satoshis&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          },
+          &quot;isCoinBase&quot;: {
+            &quot;type&quot;: &quot;boolean&quot;
+          },
+          &quot;isStake&quot;: {
+            &quot;type&quot;: &quot;boolean&quot;
+          },
+          &quot;height&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          },
+          &quot;confirmations&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          }
+        },
+        &quot;required&quot;: [
+          &quot;address&quot;,
+          &quot;txid&quot;,
+          &quot;vout&quot;,
+          &quot;scriptPubKey&quot;,
+          &quot;amount&quot;,
+          &quot;satoshis&quot;,
+          &quot;isCoinBase&quot;,
+          &quot;isStake&quot;,
+          &quot;height&quot;,
+          &quot;confirmations&quot;
+        ]
+      }
+    ]
+  }
+}</code>
                     </pre>
                   </div>
                 </div>
@@ -3994,7 +4042,7 @@
                   <div class="ui bottom attached active tab segment" data-tab="body">
                     <pre style="white-space: inherit">
                       <code class="language-json">[
-{
+  {
     &quot;address&quot;: &quot;VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g&quot;,
     &quot;txid&quot;: &quot;40fa77f84fb2646420f93ede05fe400a3b6fdb14df05a00d107de2eb5c7c7d84&quot;,
     &quot;vout&quot;: 0,
@@ -4004,52 +4052,68 @@
     &quot;isCoinBase&quot;: false,
     &quot;isStake&quot;: false,
     &quot;height&quot;: 383487,
-    &quot;confirmations&quot;: 46581
-},
-{
-    &quot;address&quot;: &quot;VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g&quot;,
-    &quot;txid&quot;: &quot;671f2613ae0bde8cd8fe63c4d671a3d3a75358d0481bf2993712ca1917846f61&quot;,
-    &quot;vout&quot;: 0,
-    &quot;scriptPubKey&quot;: &quot;76a9140c97b859de459789c2df463ff28160d1508f555e88ac&quot;,
-    &quot;amount&quot;: 2019,
-    &quot;satoshis&quot;: 201900000000,
-    &quot;isCoinBase&quot;: false,
-    &quot;isStake&quot;: false,
-    &quot;height&quot;: 383437,
-    &quot;confirmations&quot;: 46631
-},
-...
-{
-    &quot;address&quot;: &quot;VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g&quot;,
-    &quot;txid&quot;: &quot;29ce468caa3ac1ed7caed580f6f732861db456e6158c71137aa644625ebed9e0&quot;,
-    &quot;vout&quot;: 1,
-    &quot;scriptPubKey&quot;: &quot;76a9140c97b859de459789c2df463ff28160d1508f555e88ac&quot;,
-    &quot;amount&quot;: 5000000000,
-    &quot;satoshis&quot;: 500000000000000000,
-    &quot;isCoinBase&quot;: false,
-    &quot;isStake&quot;: false,
-    &quot;height&quot;: 331232,
-    &quot;confirmations&quot;: 98836
-},
-{
-    &quot;address&quot;: &quot;VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g&quot;,
-    &quot;txid&quot;: &quot;96e8bb7312b45b65171b7ea0c8999ca9f91ef947863e9b31089f38ea07f667a7&quot;,
-    &quot;vout&quot;: 0,
-    &quot;scriptPubKey&quot;: &quot;76a9140c97b859de459789c2df463ff28160d1508f555e88ac&quot;,
-    &quot;amount&quot;: 5000000000,
-    &quot;satoshis&quot;: 500000000000000000,
-    &quot;isCoinBase&quot;: false,
-    &quot;isStake&quot;: false,
-    &quot;height&quot;: 331232,
-    &quot;confirmations&quot;: 98836
-}
-]
-</code>
+    &quot;confirmations&quot;: 46563
+  }
+]</code>
                     </pre>
                   </div>
                   <div class="ui bottom attached tab segment" data-tab="schema">
                     <pre style="white-space: inherit">
-                      <code class="language-json"></code>
+                      <code class="language-json">{
+  &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
+  &quot;type&quot;: &quot;array&quot;,
+  &quot;items&quot;: {
+    &quot;anyOf&quot;: [
+      {
+        &quot;type&quot;: &quot;object&quot;,
+        &quot;properties&quot;: {
+          &quot;address&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          },
+          &quot;txid&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          },
+          &quot;vout&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          },
+          &quot;scriptPubKey&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+          },
+          &quot;amount&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          },
+          &quot;satoshis&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          },
+          &quot;isCoinBase&quot;: {
+            &quot;type&quot;: &quot;boolean&quot;
+          },
+          &quot;isStake&quot;: {
+            &quot;type&quot;: &quot;boolean&quot;
+          },
+          &quot;height&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          },
+          &quot;confirmations&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+          }
+        },
+        &quot;required&quot;: [
+          &quot;address&quot;,
+          &quot;txid&quot;,
+          &quot;vout&quot;,
+          &quot;scriptPubKey&quot;,
+          &quot;amount&quot;,
+          &quot;satoshis&quot;,
+          &quot;isCoinBase&quot;,
+          &quot;isStake&quot;,
+          &quot;height&quot;,
+          &quot;confirmations&quot;
+        ]
+      }
+    ]
+  }
+}</code>
                     </pre>
                   </div>
                 </div>

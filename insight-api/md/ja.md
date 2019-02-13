@@ -18,6 +18,21 @@ insight APIドキュメント
 
 See [GitHub repository](https://github.com/vips-wallet/docs/).
 
+# Data Structures
+
+## UTXO(object)
+
++ `address`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス
++ `txid`: 40fa77f84fb2646420f93ede05fe400a3b6fdb14df05a00d107de2eb5c7c7d84 (string, required) - TXID
++ `vout`: 0 (number, required) - VOUTインデックス
++ `scriptPubKey`: 76a9140c97b859de459789c2df463ff28160d1508f555e88ac (string, required) - scriptPubKey
++ `amount`: 217 (number, required) - 額
++ `satoshis`: 21700000000 (number, required) - 額(1e-8VIPS単位)
++ `isCoinBase`: false (boolean, required) - CoinBaseトランザクションフラグ
++ `isStake`: false (boolean, required) - Stakeトランザクションフラグ
++ `height`: 383487 (number, required) - ブロック高
++ `confirmations`: 46563 (number, required) - 検証数
+
 # Group address
 
 ## アドレス情報 [GET /addr/{addr}]
@@ -67,58 +82,7 @@ See [GitHub repository](https://github.com/vips-wallet/docs/).
   + `addr`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス
 
 + Response 200 (application/json)
-  + Body
-    [
-      {
-            "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
-            "txid": "40fa77f84fb2646420f93ede05fe400a3b6fdb14df05a00d107de2eb5c7c7d84",
-            "vout": 0,
-            "scriptPubKey": "76a9140c97b859de459789c2df463ff28160d1508f555e88ac",
-            "amount": 217,
-            "satoshis": 21700000000,
-            "isCoinBase": false,
-            "isStake": false,
-            "height": 383487,
-            "confirmations": 46563
-      },
-      {
-            "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
-            "txid": "671f2613ae0bde8cd8fe63c4d671a3d3a75358d0481bf2993712ca1917846f61",
-            "vout": 0,
-            "scriptPubKey": "76a9140c97b859de459789c2df463ff28160d1508f555e88ac",
-            "amount": 2019,
-            "satoshis": 201900000000,
-            "isCoinBase": false,
-            "isStake": false,
-            "height": 383437,
-            "confirmations": 46613
-      },
-      ...
-      {
-            "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
-            "txid": "29ce468caa3ac1ed7caed580f6f732861db456e6158c71137aa644625ebed9e0",
-            "vout": 1,
-            "scriptPubKey": "76a9140c97b859de459789c2df463ff28160d1508f555e88ac",
-            "amount": 5000000000,
-            "satoshis": 500000000000000000,
-            "isCoinBase": false,
-            "isStake": false,
-            "height": 331232,
-            "confirmations": 98818
-      },
-      {
-            "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
-            "txid": "96e8bb7312b45b65171b7ea0c8999ca9f91ef947863e9b31089f38ea07f667a7",
-            "vout": 0,
-            "scriptPubKey": "76a9140c97b859de459789c2df463ff28160d1508f555e88ac",
-            "amount": 5000000000,
-            "satoshis": 500000000000000000,
-            "isCoinBase": false,
-            "isStake": false,
-            "height": 331232,
-            "confirmations": 98818
-      }
-    ]
+  + Attributes (array[UTXO], fixed-type)
 
 + Response 400 (text/plain)
   + Body
@@ -247,58 +211,7 @@ See [GitHub repository](https://github.com/vips-wallet/docs/).
   + `addrs`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス(カンマ区切りリスト)
 
 + Response 200 (application/json)
-  + Body
-    [
-      {
-            "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
-            "txid": "40fa77f84fb2646420f93ede05fe400a3b6fdb14df05a00d107de2eb5c7c7d84",
-            "vout": 0,
-            "scriptPubKey": "76a9140c97b859de459789c2df463ff28160d1508f555e88ac",
-            "amount": 217,
-            "satoshis": 21700000000,
-            "isCoinBase": false,
-            "isStake": false,
-            "height": 383487,
-            "confirmations": 46578
-      },
-      {
-            "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
-            "txid": "671f2613ae0bde8cd8fe63c4d671a3d3a75358d0481bf2993712ca1917846f61",
-            "vout": 0,
-            "scriptPubKey": "76a9140c97b859de459789c2df463ff28160d1508f555e88ac",
-            "amount": 2019,
-            "satoshis": 201900000000,
-            "isCoinBase": false,
-            "isStake": false,
-            "height": 383437,
-            "confirmations": 46628
-      },
-      ...
-      {
-            "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
-            "txid": "29ce468caa3ac1ed7caed580f6f732861db456e6158c71137aa644625ebed9e0",
-            "vout": 1,
-            "scriptPubKey": "76a9140c97b859de459789c2df463ff28160d1508f555e88ac",
-            "amount": 5000000000,
-            "satoshis": 500000000000000000,
-            "isCoinBase": false,
-            "isStake": false,
-            "height": 331232,
-            "confirmations": 98833
-      },
-      {
-            "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
-            "txid": "96e8bb7312b45b65171b7ea0c8999ca9f91ef947863e9b31089f38ea07f667a7",
-            "vout": 0,
-            "scriptPubKey": "76a9140c97b859de459789c2df463ff28160d1508f555e88ac",
-            "amount": 5000000000,
-            "satoshis": 500000000000000000,
-            "isCoinBase": false,
-            "isStake": false,
-            "height": 331232,
-            "confirmations": 98833
-      }
-    ]
+  + Attributes (array[UTXO], fixed-type)
 
 + Response 400 (text/plain)
   + Body
@@ -324,58 +237,7 @@ See [GitHub repository](https://github.com/vips-wallet/docs/).
   + `addrs`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス(カンマ区切りリスト)
 
 + Response 200 (application/json)
-  + Body
-    [
-      {
-            "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
-            "txid": "40fa77f84fb2646420f93ede05fe400a3b6fdb14df05a00d107de2eb5c7c7d84",
-            "vout": 0,
-            "scriptPubKey": "76a9140c97b859de459789c2df463ff28160d1508f555e88ac",
-            "amount": 217,
-            "satoshis": 21700000000,
-            "isCoinBase": false,
-            "isStake": false,
-            "height": 383487,
-            "confirmations": 46580
-      },
-      {
-            "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
-            "txid": "671f2613ae0bde8cd8fe63c4d671a3d3a75358d0481bf2993712ca1917846f61",
-            "vout": 0,
-            "scriptPubKey": "76a9140c97b859de459789c2df463ff28160d1508f555e88ac",
-            "amount": 2019,
-            "satoshis": 201900000000,
-            "isCoinBase": false,
-            "isStake": false,
-            "height": 383437,
-            "confirmations": 46630
-      },
-      ...
-      {
-            "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
-            "txid": "29ce468caa3ac1ed7caed580f6f732861db456e6158c71137aa644625ebed9e0",
-            "vout": 1,
-            "scriptPubKey": "76a9140c97b859de459789c2df463ff28160d1508f555e88ac",
-            "amount": 5000000000,
-            "satoshis": 500000000000000000,
-            "isCoinBase": false,
-            "isStake": false,
-            "height": 331232,
-            "confirmations": 98835
-      },
-      {
-            "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
-            "txid": "96e8bb7312b45b65171b7ea0c8999ca9f91ef947863e9b31089f38ea07f667a7",
-            "vout": 0,
-            "scriptPubKey": "76a9140c97b859de459789c2df463ff28160d1508f555e88ac",
-            "amount": 5000000000,
-            "satoshis": 500000000000000000,
-            "isCoinBase": false,
-            "isStake": false,
-            "height": 331232,
-            "confirmations": 98835
-      }
-    ]
+  + Attributes (array[UTXO], fixed-type)
 
 + Response 400 (text/plain)
   + Body
@@ -401,58 +263,7 @@ See [GitHub repository](https://github.com/vips-wallet/docs/).
   + `addrs`: VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g (string, required) - VIPSTARCOINアドレス(カンマ区切りリスト)
 
 + Response 200 (application/json)
-  + Body
-    [
-      {
-            "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
-            "txid": "40fa77f84fb2646420f93ede05fe400a3b6fdb14df05a00d107de2eb5c7c7d84",
-            "vout": 0,
-            "scriptPubKey": "76a9140c97b859de459789c2df463ff28160d1508f555e88ac",
-            "amount": 217,
-            "satoshis": 21700000000,
-            "isCoinBase": false,
-            "isStake": false,
-            "height": 383487,
-            "confirmations": 46581
-      },
-      {
-            "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
-            "txid": "671f2613ae0bde8cd8fe63c4d671a3d3a75358d0481bf2993712ca1917846f61",
-            "vout": 0,
-            "scriptPubKey": "76a9140c97b859de459789c2df463ff28160d1508f555e88ac",
-            "amount": 2019,
-            "satoshis": 201900000000,
-            "isCoinBase": false,
-            "isStake": false,
-            "height": 383437,
-            "confirmations": 46631
-      },
-      ...
-      {
-            "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
-            "txid": "29ce468caa3ac1ed7caed580f6f732861db456e6158c71137aa644625ebed9e0",
-            "vout": 1,
-            "scriptPubKey": "76a9140c97b859de459789c2df463ff28160d1508f555e88ac",
-            "amount": 5000000000,
-            "satoshis": 500000000000000000,
-            "isCoinBase": false,
-            "isStake": false,
-            "height": 331232,
-            "confirmations": 98836
-      },
-      {
-            "address": "VBoonburnwwwwwwwwwwwwwwwwwwwsL3j5g",
-            "txid": "96e8bb7312b45b65171b7ea0c8999ca9f91ef947863e9b31089f38ea07f667a7",
-            "vout": 0,
-            "scriptPubKey": "76a9140c97b859de459789c2df463ff28160d1508f555e88ac",
-            "amount": 5000000000,
-            "satoshis": 500000000000000000,
-            "isCoinBase": false,
-            "isStake": false,
-            "height": 331232,
-            "confirmations": 98836
-      }
-    ]
+  + Attributes (array[UTXO], fixed-type)
 
 ## トランザクション履歴取得 GETリクエスト版 [GET /addrs/{addrs}/txs]
 
