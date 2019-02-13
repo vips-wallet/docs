@@ -11,7 +11,7 @@ This document is [vipstarcoin-api](https://github.com/vips-wallet/vipstarcoin-ap
 #### use CLI
 
 ```
-npm install -g snowboard@1.8.12 --unsafe-perm
+npm install -g snowboard@1.8.13 --unsafe-perm
 git clone https://github.com/vips-wallet/docs.git
 cd docs/insight-api
 snowboard http md/ja.md
@@ -34,7 +34,7 @@ docker-compose -f docker-compose-http.yml up -d
 #### use CLI
 
 ```
-npm install -g snowboard@1.8.12 --unsafe-perm
+npm install -g snowboard@1.8.13 --unsafe-perm
 git clone https://github.com/vips-wallet/docs.git
 cd docs/insight-api
 snowboard html -o html/ja.html md/ja.md
