@@ -1632,7 +1632,7 @@ VIPSTARCOIN残高の分布を取得する。
       }
     ]
 
-## USD建残高分布残高取得 [GET /statistics/richer-than]
+## USD建残高分布取得 [GET /statistics/richer-than]
 
 USD建でVIPSTARCOIN残高の分布を取得する。
 
